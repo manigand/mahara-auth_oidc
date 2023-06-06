@@ -128,6 +128,7 @@ class oidcclient {
             'response_mode' => 'form_post',
             'resource' => $this->resource,
             'state' => $this->getnewstate($nonce, $stateparams),
+            'redirect_uri' => 'http://mahara.local.com/auth/oidc/redirect.php'
         );
         if ($promptlogin === true) {
             $params['prompt'] = 'login';
@@ -196,6 +197,7 @@ class oidcclient {
             'client_secret' => $this->clientsecret,
             'grant_type' => 'authorization_code',
             'code' => $code,
+            'redirect_uri' => 'http://mahara.local.com/auth/oidc/redirect.php'
         );
 
         try {
